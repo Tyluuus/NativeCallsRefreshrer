@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:native_calls_refresher/pages/airplane_mode_page.dart';
+import 'package:native_calls_refresher/pages/brightness_page.dart';
 import 'package:native_calls_refresher/pages/haptics_page.dart';
 
 import 'pages/device_info_page.dart';
@@ -34,15 +35,9 @@ class HomePage extends StatelessWidget {
         children: [
           _buildMenuButton(
             context,
-            title: 'Device Info (Pigeon)',
+            title: '1. Device Info (Pigeon)',
             icon: Icons.smartphone,
             onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const DeviceInfoPage())),
-          ),
-          _buildMenuButton(
-            context,
-            title: '2. Tryb Samolotowy (MethodChannel)',
-            icon: Icons.flight,
-            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const AirplaneModePage())),
           ),
           _buildMenuButton(
             context,
@@ -55,6 +50,12 @@ class HomePage extends StatelessWidget {
             title: '3. Haptyka (Pigeon enum)',
             icon: Icons.vibration,
             onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HapticsPage())),
+          ),
+          _buildMenuButton(
+            context,
+            title: '4. Jasność (EventChannel Stream)',
+            icon: Icons.brightness_6,
+            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const BrightnessPage())),
           ),
         ],
       ),

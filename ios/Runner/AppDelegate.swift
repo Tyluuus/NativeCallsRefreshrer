@@ -32,6 +32,10 @@ import Network
       
       HapticsApiSetup.setUp(binaryMessenger: messenger, api: MyHapticsApi())
       
+      let brightnessChannel = FlutterEventChannel(name: "com.sandbox.app/brightness", binaryMessenger: messenger)
+      
+      brightnessChannel.setStreamHandler(BrightnessStreamHandler())
+      
       GeneratedPluginRegistrant.register(with: self)
       return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
@@ -82,4 +86,28 @@ class MyHapticsApi: HapticsApi {
             generator.notificationOccurred(.warning)
         }
     }
+}
+
+class BrightnessStreamHandler: NSObject, FlutterStreamHandler {
+    private var eventSink: FlutterEventSink?
+    private var timer: Timer?
+    
+    func onListen(withArguments arguments: Any?, eventSink events: @escaping FlutterEventSink) -> FlutterError? {
+        self.eventSink = events
+        
+        self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+            let brightness = UIScreen.main.brightness
+            events(brightness)
+        }
+        
+        return nil
+    }
+    
+    func onCancel(withArguments arguments: Any?) -> FlutterError? {
+        self.timer?.invalidate()
+        self.timer = nil
+        self.eventSink = nil
+        return nil
+    }
+    
 }

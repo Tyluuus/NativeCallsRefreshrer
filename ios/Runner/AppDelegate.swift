@@ -36,6 +36,10 @@ import Network
       
       brightnessChannel.setStreamHandler(BrightnessStreamHandler())
       
+      let cameraFactory = NativeCameraViewFactory(messenger: messenger)
+      
+      pluginRegistrar.register(cameraFactory, withId: "NativeCameraViewType")
+      
       GeneratedPluginRegistrant.register(with: self)
       return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }

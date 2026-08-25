@@ -18,6 +18,8 @@
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
 		D6143253303D70AE00016A60 /* DeviceInfoApi.g.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6143252303D70AE00016A60 /* DeviceInfoApi.g.swift */; };
 		D6143255303D83C400016A60 /* HapticsApi.g.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6143254303D83C400016A60 /* HapticsApi.g.swift */; };
+		D6143257303DA55D00016A60 /* CameraApi.g.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6143256303DA55D00016A60 /* CameraApi.g.swift */; };
+		D6143259303DA57400016A60 /* NativeCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6143258303DA56F00016A60 /* NativeCameraView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6143252303D70AE00016A60 /* DeviceInfoApi.g.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoApi.g.swift; sourceTree = "<group>"; };
 		D6143254303D83C400016A60 /* HapticsApi.g.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsApi.g.swift; sourceTree = "<group>"; };
+		D6143256303DA55D00016A60 /* CameraApi.g.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraApi.g.swift; sourceTree = "<group>"; };
+		D6143258303DA56F00016A60 /* NativeCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeCameraView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,8 @@
 		97C146F01CF9000F007C117D /* Runner */ = {
 			isa = PBXGroup;
 			children = (
+				D6143258303DA56F00016A60 /* NativeCameraView.swift */,
+				D6143256303DA55D00016A60 /* CameraApi.g.swift */,
 				D6143254303D83C400016A60 /* HapticsApi.g.swift */,
 				D6143252303D70AE00016A60 /* DeviceInfoApi.g.swift */,
 				97C146FA1CF9000F007C117D /* Main.storyboard */,
@@ -287,7 +293,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6143257303DA55D00016A60 /* CameraApi.g.swift in Sources */,
 				74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */,
+				D6143259303DA57400016A60 /* NativeCameraView.swift in Sources */,
 				1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */,
 				7884E8682EC3CC0700C636F2 /* SceneDelegate.swift in Sources */,
 				D6143253303D70AE00016A60 /* DeviceInfoApi.g.swift in Sources */,

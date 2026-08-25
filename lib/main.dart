@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:native_calls_refresher/pages/airplane_mode_page.dart';
 import 'package:native_calls_refresher/pages/brightness_page.dart';
+import 'package:native_calls_refresher/pages/camera_page.dart';
 import 'package:native_calls_refresher/pages/haptics_page.dart';
 
 import 'pages/device_info_page.dart';
@@ -56,6 +57,12 @@ class HomePage extends StatelessWidget {
             title: '4. Jasność (EventChannel Stream)',
             icon: Icons.brightness_6,
             onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const BrightnessPage())),
+          ),
+          _buildMenuButton(
+            context,
+            title: '5. Kamera (Pigeon + UIKitView)',
+            icon: Icons.flashlight_on_rounded,
+            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const CameraPage())),
           ),
         ],
       ),

@@ -24,7 +24,7 @@ class _AirplaneModePageState extends State<AirplaneModePage> {
       });
     } on MissingPluginException {
       setState(() {
-        _statusMessage = 'Błąd: MissingPluginException. \n Nie zaimplementowano części natywnej, lub użyto złej nazwy kanału';
+        _statusMessage = 'Błąd: MissingPluginException \n Nie zaimplementowano części natywnej, lub użyto złej nazwy kanału';
       });
     } on PlatformException catch (e) {
       setState(() {

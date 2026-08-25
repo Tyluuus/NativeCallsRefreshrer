@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:native_calls_refresher/pages/airplane_mode_page.dart';
+import 'package:native_calls_refresher/pages/haptics_page.dart';
 
 import 'pages/device_info_page.dart';
 
@@ -29,6 +30,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(title: const Text('Flutter & iOS Integrations'), backgroundColor: Theme.of(context).colorScheme.inversePrimary),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        spacing: 12.0,
         children: [
           _buildMenuButton(
             context,
@@ -42,6 +44,18 @@ class HomePage extends StatelessWidget {
             icon: Icons.flight,
             onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const AirplaneModePage())),
           ),
+          _buildMenuButton(
+            context,
+            title: '2. Tryb Samolotowy (MethodChannel)',
+            icon: Icons.flight,
+            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const AirplaneModePage())),
+          ),
+          _buildMenuButton(
+            context,
+            title: '3. Haptyka (Pigeon enum)',
+            icon: Icons.vibration,
+            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HapticsPage())),
+          ),
         ],
       ),
     );
@@ -49,7 +63,7 @@ class HomePage extends StatelessWidget {
 
   Widget _buildMenuButton(BuildContext context, {required String title, required IconData icon, required VoidCallback? onPressed}) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(24.0, 0, 24.0, 12.0),
+      padding: const EdgeInsets.symmetric(horizontal: 24.0),
       child: SizedBox(
         width: double.infinity,
         child: ElevatedButton.icon(

@@ -3,7 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:native_calls_refresher/src/generated/device_info_api.g.dart';
 
 class DeviceInfoPage extends StatefulWidget {
-  const DeviceInfoPage({super.key});
+  final DeviceInfoApi? api;
+
+  const DeviceInfoPage({super.key, this.api});
 
   @override
   State<DeviceInfoPage> createState() => _DeviceInfoPageState();
@@ -14,7 +16,7 @@ class _DeviceInfoPageState extends State<DeviceInfoPage> {
   bool _isLoading = false;
   String? _errorMessage;
 
-  final DeviceInfoApi _api = DeviceInfoApi();
+  late final DeviceInfoApi _api = widget.api ?? DeviceInfoApi();
 
   Future<void> _fetchDataFromIOS() async {
     setState(() {

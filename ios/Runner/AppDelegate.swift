@@ -30,6 +30,8 @@ import Network
       }
       })
       
+      HapticsApiSetup.setUp(binaryMessenger: messenger, api: MyHapticsApi())
+      
       GeneratedPluginRegistrant.register(with: self)
       return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
@@ -62,5 +64,22 @@ class MyDeviceInfoApi: DeviceInfoApi {
         let batteryLevel = Int(device.batteryLevel * 100)
         
         return DeviceInfo(modelName: device.model, batteryLevel: batteryLevel < 0 ? -1 : Int64(batteryLevel))
+    }
+}
+
+class MyHapticsApi: HapticsApi {
+    func triggerFeedback(type: HapticsFeedbackType) throws {
+        let generator = UINotificationFeedbackGenerator()
+        
+        generator.prepare()
+        
+        switch type {
+        case .error:
+            generator.notificationOccurred(.error)
+        case .success:
+            generator.notificationOccurred(.success)
+        case .warning:
+            generator.notificationOccurred(.warning)
+        }
     }
 }

@@ -11,3 +11,9 @@ Contains 5 small examples:
 
 Small addition:
 All examples are covered with tests
+
+Pigeon code generated using below command:
+```bash
+dart run pigeon --input pigeons/haptics_api.dart   
+```
+
